@@ -70,6 +70,11 @@ namespace ConsoleApplication
                 Write("Using public key: {0}", pubKey);
                 templateParams.Add("sshKeyData", new Dictionary<string, object>{{"value", pubKey}});
             }
+            else
+            {
+                Write("We could not find a RSA public key in {0}. Please create a public key and place it there.", sshPubLocation);
+                return;
+            }
 
             Write("Creating deployment named {0} in {1} with template {2}", resourceGroupName, westus, templateFileLocation);
             var groupParams = new ResourceGroup { Location = westus};
