@@ -12,7 +12,7 @@ using the Azure SDK for .NET.
 When deploying an application definition with a template, you can provide parameter values to customize how the
 resources are created. You specify values for these parameters either inline or in a parameter file.
 
-** On this page**
+**On this page**
 
 - [Running this sample](#run)
 - [What is program.cs doing?](#example)
