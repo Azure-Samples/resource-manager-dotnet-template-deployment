@@ -9,6 +9,7 @@ using Microsoft.Rest.Azure.Authentication;
 using Microsoft.Azure.Management.ResourceManager;
 using Microsoft.Azure.Management.ResourceManager.Models;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace ConsoleApplication
 {
@@ -53,6 +54,18 @@ namespace ConsoleApplication
                     {"dnsLabelPrefix", new Dictionary<string, object>{{"value", vmDnsLabel}}},
                     {"vmName", new Dictionary<string, object>{{"value", "azure-deployment-sample-vm"}}}
                 };
+
+            /*
+               NOTE: If you would like to read the template parameters from a parameters.json file 
+                     (like: https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-simple-linux/azuredeploy.parameters.json),
+                     then you can use the following code to read the JSON, extract the parameters and then convert them to the required structure.
+               
+               var templateString = File.ReadAllText(Path.GetFullPath("template_params.json"));
+               var templateParamsObj = JObject.Parse(templateString)["parameters"];
+               templateParams = templateParamsObj.ToObject<Dictionary<string, Dictionary<string, object>>>();
+               Write("{0}", JsonConvert.SerializeObject(templateParams));
+
+            */
 
             Write("Building the deployment from a json file template from parameters");
             var deployParams = new Deployment{
