@@ -23,7 +23,7 @@
     },
     "vmSize": {
       "type": "string",
-      "defaultValue": "Standard_D1",
+      "defaultValue": "Standard_D2",
       "metadata": {
         "description": "Size of the VM"
       }
@@ -50,7 +50,7 @@
     },
     "imageSku": {
       "type": "string",
-      "defaultValue": "16.04.0-DAILY-LTS",
+      "defaultValue": "16.04.0-LTS",
       "metadata": {
         "description": "Name of the image sku"
       }
