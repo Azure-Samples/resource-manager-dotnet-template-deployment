@@ -26,7 +26,7 @@ resources are created. You specify values for these parameters either inline or 
 1. Clone the repository.
 
     ```
-    git clone https://github.com/Azure-Samples/resource-manager-dotnet-resources-and-groups.git
+    git clone https://github.com/Azure-Samples/resource-manager-dotnet-template-deployment.git
     ```
 
 1. Install the dependencies.
